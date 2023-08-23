@@ -1,0 +1,43 @@
+.banner {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+
+/* blur and darken */
+.bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px) brightness(0.7);
+}
+
+.bannerText {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bannerText button {
+  padding: 0.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #dd0000;
+  font-size: 2rem;
+  margin-top: 16px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bannerText button:hover {
+  background: #dd0000;
+  color: #fff;
+  transform: scale(1.1);
+}
