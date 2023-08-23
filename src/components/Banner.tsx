@@ -37,7 +37,7 @@ export default function Banner() {
         />
 
         <div className={styles.bannerText}>
-          <h1>Vaccine {bannerImg}</h1>
+          <h1>Vaccine</h1>
           <p>BOOST your immuno stat with this simple trick?!🍆💦👌</p>
 
           <a href="http://r.mtdv.me/QLG3LRwDD9">
