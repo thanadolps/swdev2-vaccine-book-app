@@ -21,7 +21,7 @@ function randBannerImg(exclude: string = ""): string {
 export default function Banner() {
   const [bannerImg, setBannerImg] = useState(randBannerImg());
   useEffect(() => {
-    const interval = setInterval(() => setBannerImg(randBannerImg()), 3000);
+    const interval = setInterval(() => setBannerImg(randBannerImg()), 2000);
     return () => clearInterval(interval);
   });
 
@@ -37,14 +37,24 @@ export default function Banner() {
         />
 
         <div className={styles.bannerText}>
-          <h1>Vaccine</h1>
-          <p>Boost your immuno stat with this simple trick</p>
+          <h1>Vaccine {bannerImg}</h1>
+          <p>BOOST your immuno stat with this simple trick?!🍆💦👌</p>
 
           <a href="http://r.mtdv.me/QLG3LRwDD9">
-            <button>CLICK HERE!!!!</button>
+            <BlinkButton />
           </a>
         </div>
       </div>
     </div>
   );
 }
+
+const BlinkButton = () => {
+  const [sw, setSw] = useState(true);
+  useEffect(() => {
+    const interval = setInterval(() => setSw(!sw), 250);
+    return () => clearInterval(interval);
+  });
+
+  return <button className={sw ? styles.blink : ""}>CLICK NOW!!!!</button>;
+};
