@@ -15,15 +15,25 @@ export default function Home() {
 
       <Banner />
       <div className="flex flex-wrap justify-center md:mx-16 py-16 gap-8">
-        <Card name="Chulalongkorn Hospital" imgSrc="/hospital/chula.jpg" />
-        <Card name="Rajavithi Hospital" imgSrc="/hospital/rajavithi.jpg" />
+        <Card
+          name="Chulalongkorn Hospital"
+          imgSrc="/swdev2-vaccine-book-app/hospital/chula.jpg"
+        />
+        <Card
+          name="Rajavithi Hospital"
+          imgSrc="/swdev2-vaccine-book-app/hospital/rajavithi.jpg"
+        />
         <Card
           name="Thammasat University Hospital"
-          imgSrc="/hospital/thammasat.jpg"
+          imgSrc="/swdev2-vaccine-book-app/hospital/thammasat.jpg"
         />
       </div>
       <div className="fixed right-0 bottom-0 w-60 h-60">
-        <Image src="/cover/medical-5459630_1280.png" alt="support" fill />
+        <Image
+          src="/swdev2-vaccine-book-app/cover/medical-5459630_1280.png"
+          alt="support"
+          fill
+        />
       </div>
     </main>
   );

@@ -30,7 +30,7 @@ export default function Banner() {
       <div className={styles.banner}>
         <Image
           className={styles.bannerImg}
-          src={bannerImg}
+          src={"/swdev2-vaccine-book-app" + bannerImg}
           alt="vaccine banner image"
           fill={true}
           objectFit="cover"
