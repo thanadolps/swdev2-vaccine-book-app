@@ -10,7 +10,7 @@ export default function Home() {
         style={{
           backgroundImage: "url(/cover/vaccine-6017110_120.png)",
         }}
-        className="fixed right-0 left-0 top-0 bottom-0 w-full h-full bg-repeat bg-fixed -z-10 brightness-50 opacity-10 contrast-75"
+        className="fixed right-0 left-0 top-0 bottom-0 w-full h-full bg-repeat bg-fixed -z-10 brightness-50 opacity-25 contrast-75"
       ></div>
 
       <Banner />
