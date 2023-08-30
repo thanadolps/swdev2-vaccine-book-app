@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "../../node_modules/next/image";
+import Image from "@/components/Image";
 import { useInView } from "../../node_modules/react-intersection-observer/index";
 import styles from "./Card.module.css";
 

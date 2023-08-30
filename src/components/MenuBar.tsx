@@ -1,4 +1,4 @@
-import Image from "../../node_modules/next/image";
+import Image from "@/components/Image";
 import Link from "../../node_modules/next/link";
 
 export default function MenuBar() {
@@ -9,7 +9,7 @@ export default function MenuBar() {
         className="bg-gray-500 h-full w-32 opacity-25 hover:opacity-75 transition-all"
       >
         <Image
-          src="/swdev2-vaccine-book-app/icons/booking.png"
+          src="/icons/booking.png"
           alt="booking"
           width={64}
           height={64}
@@ -22,7 +22,7 @@ export default function MenuBar() {
         className="bg-teal-500 h-full w-32 overflow-hidden opacity-25 hover:opacity-75 transition-all"
       >
         <Image
-          src="/swdev2-vaccine-book-app/logo.png"
+          src="/logo.png"
           alt="logo"
           width={64}
           height={64}

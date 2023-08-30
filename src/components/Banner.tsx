@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "../../node_modules/next/image";
+import Image from "@/components/Image";
 import styles from "./Banner.module.css";
 
 const bannerImages = [
@@ -30,7 +30,7 @@ export default function Banner() {
       <div className={styles.banner}>
         <Image
           className={styles.bannerImg}
-          src={"/swdev2-vaccine-book-app" + bannerImg}
+          src={bannerImg}
           alt="vaccine banner image"
           fill={true}
           objectFit="cover"

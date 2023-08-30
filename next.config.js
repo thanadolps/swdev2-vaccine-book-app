@@ -23,6 +23,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+
+  /**
+   * Set environment variables.
+   * @see https://nextjs.org/docs/api-reference/next.config.js/environment-variables
+   */
+  env: {
+    BASE_PATH: "/swdev2-vaccine-book-app",
+  },
 };
 
 module.exports = nextConfig;
