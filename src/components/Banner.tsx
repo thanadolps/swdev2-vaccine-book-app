@@ -8,6 +8,7 @@ const bannerImages = [
   "/banner/benjamin-lehman-gkZ-k3xf25w-unsplash.jpg",
   "/banner/cdc-voVYCm6xoQo-unsplash.jpg",
   "/banner/ed-us-K0DMl4NmOPo-unsplash.jpg",
+  "/banner/cdc-d3fe9qJDqaI-unsplash.jpg",
 ];
 
 function randBannerImg(exclude: string = ""): string {
@@ -19,11 +20,18 @@ function randBannerImg(exclude: string = ""): string {
 }
 
 export default function Banner() {
-  const [bannerImg, setBannerImg] = useState(randBannerImg());
+  const [bannerIdx, setBannerIdx] = useState(0);
+  const bannerImg = bannerImages[bannerIdx];
+
+  function nextBanner() {
+    const newIdx = (bannerIdx + 1) % bannerImages.length;
+    setBannerIdx(newIdx);
+  }
+
   useEffect(() => {
-    const interval = setInterval(() => setBannerImg(randBannerImg()), 2000);
+    const interval = setInterval(nextBanner, 4000);
     return () => clearInterval(interval);
-  });
+  }, [nextBanner]);
 
   return (
     <div>
@@ -34,13 +42,16 @@ export default function Banner() {
           alt="vaccine banner image"
           fill={true}
           objectFit="cover"
+          onClick={nextBanner}
         />
 
-        <div className={styles.bannerText}>
-          <h1>Vaccine</h1>
-          <p>BOOST your immuno stat with this simple trick?!🍆💦👌</p>
+        <div className={styles.bannerText + " pointer-events-none"}>
+          <h1 className="pointer-events-auto w-fit m-auto">Vaccine</h1>
+          <p className="pointer-events-auto w-fit m-auto">
+            BOOST your immuno stat with this simple trick?!🍆💦👌
+          </p>
 
-          <a href="http://r.mtdv.me/QLG3LRwDD9">
+          <a className="pointer-events-auto" href="http://r.mtdv.me/QLG3LRwDD9">
             <BlinkButton />
           </a>
         </div>
