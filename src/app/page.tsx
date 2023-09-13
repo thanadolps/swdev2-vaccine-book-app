@@ -1,5 +1,5 @@
 import Banner from "@/components/Banner";
-import Card from "@/components/Card";
+import ProductCard from "@/components/ProductCard";
 import Image from "../../node_modules/next/image";
 import styles from "./page.module.css";
 
@@ -15,9 +15,15 @@ export default function Home() {
 
       <Banner />
       <div className="flex flex-wrap justify-center md:mx-16 py-16 gap-8">
-        <Card name="Chulalongkorn Hospital" imgSrc="/hospital/chula.jpg" />
-        <Card name="Rajavithi Hospital" imgSrc="/hospital/rajavithi.jpg" />
-        <Card
+        <ProductCard
+          name="Chulalongkorn Hospital"
+          imgSrc="/hospital/chula.jpg"
+        />
+        <ProductCard
+          name="Rajavithi Hospital"
+          imgSrc="/hospital/rajavithi.jpg"
+        />
+        <ProductCard
           name="Thammasat University Hospital"
           imgSrc="/hospital/thammasat.jpg"
         />

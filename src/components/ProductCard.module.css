@@ -1,7 +1,6 @@
 .card {
   border: 3px solid rgba(200, 200, 200, 0.5);
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem wheat;
 
   width: max(35vw, 300px);
   padding: 8px;
@@ -10,5 +9,5 @@
 
   overflow: scroll;
 
-  background-color: rgba(100, 100, 100, 0.5);
+  background-color: rgba(100, 100, 100, 0.2);
 }
