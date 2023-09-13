@@ -5,10 +5,13 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import styles from "./ProductCard.module.css";
 import InteractiveCard from "./InteractiveCard";
+import { Rating } from "@mui/material";
 
 export type CardProps = {
   name: string;
   imgSrc: string;
+  rating?: number;
+  onRatingChange?: (rating: number) => void;
 };
 
 export default function Card(props: CardProps) {
@@ -36,6 +39,15 @@ export default function Card(props: CardProps) {
   return (
     <InteractiveCard>
       <div className={styles.card}>
+        {
+          <Rating
+            value={props.rating ?? 0}
+            onChange={(ev, val) => {
+              if (val === null) return;
+              props.onRatingChange?.(val);
+            }}
+          />
+        }
         <div className="bg-gray-400 bg-opacity-20 w-fit mx-auto px-4 py-2">
           <Image
             src={props.imgSrc}
