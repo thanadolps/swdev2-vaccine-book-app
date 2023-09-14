@@ -39,15 +39,13 @@ export default function Card(props: CardProps) {
   return (
     <InteractiveCard>
       <div className={styles.card}>
-        {
-          <Rating
-            value={props.rating ?? 0}
-            onChange={(ev, val) => {
-              if (val === null) return;
-              props.onRatingChange?.(val);
-            }}
-          />
-        }
+        <Rating
+          value={props.rating ?? 0}
+          onChange={(_, val) => {
+            if (val === null) return;
+            props.onRatingChange?.(val);
+          }}
+        />
         <div className="bg-gray-400 bg-opacity-20 w-fit mx-auto px-4 py-2">
           <Image
             src={props.imgSrc}

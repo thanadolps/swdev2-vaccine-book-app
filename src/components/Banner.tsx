@@ -11,14 +11,6 @@ const bannerImages = [
   "/banner/cdc-d3fe9qJDqaI-unsplash.jpg",
 ];
 
-function randBannerImg(exclude: string = ""): string {
-  const newImg = bannerImages[Math.floor(Math.random() * bannerImages.length)];
-  if (newImg === exclude) {
-    return randBannerImg(exclude);
-  }
-  return newImg;
-}
-
 export default function Banner() {
   const [bannerIdx, setBannerIdx] = useState(0);
   const bannerImg = bannerImages[bannerIdx];
