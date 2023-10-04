@@ -40,6 +40,7 @@ export default function Card(props: CardProps) {
     <InteractiveCard>
       <div className={styles.card}>
         <Rating
+          className="z-50"
           value={props.rating ?? 0}
           onChange={(_, val) => {
             if (val === null) return;

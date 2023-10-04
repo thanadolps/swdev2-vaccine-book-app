@@ -1,5 +1,4 @@
 import Banner from "@/components/Banner";
-import CardPanel from "@/components/CardPanel";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -13,7 +12,6 @@ export default function Home() {
       ></div>
 
       <Banner />
-      <CardPanel />
     </main>
   );
 }
