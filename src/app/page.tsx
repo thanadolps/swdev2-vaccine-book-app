@@ -1,4 +1,6 @@
 import Banner from "@/components/Banner";
+import PromoteCard from "@/components/PromoteCard";
+import VideoPlayer from "@/components/VideoPlayer";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -12,6 +14,8 @@ export default function Home() {
       ></div>
 
       <Banner />
+
+      <PromoteCard />
     </main>
   );
 }
