@@ -25,7 +25,7 @@ export default function Card(props: CardProps) {
 
   const [typing, setTyping] = useState("");
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || !props.name) return;
     const interval = setInterval(() => {
       if (typing.length < text.length) {
         setTyping((typing) => text.slice(0, typing.length + typeSpeed));
@@ -34,19 +34,21 @@ export default function Card(props: CardProps) {
       }
     }, typeDelay);
     return () => clearInterval(interval);
-  }, [inView]);
+  }, [inView, props.name]);
 
   return (
     <InteractiveCard>
       <div className={styles.card}>
-        <Rating
-          className="z-50"
-          value={props.rating ?? 0}
-          onChange={(_, val) => {
-            if (val === null) return;
-            props.onRatingChange?.(val);
-          }}
-        />
+        {props.onRatingChange && (
+          <Rating
+            className="z-50"
+            value={props.rating ?? 0}
+            onChange={(_, val) => {
+              if (val === null) return;
+              props.onRatingChange?.(val);
+            }}
+          />
+        )}
         <div className="bg-gray-400 bg-opacity-20 w-fit mx-auto px-4 py-2">
           <Image
             src={props.imgSrc}

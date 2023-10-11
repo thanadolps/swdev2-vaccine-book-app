@@ -3,6 +3,10 @@
         "vaccine-book-app"
     ],
     "conventionalCommits.scopes": [
-        "ass3"
+        "ass3",
+        "ass4",
+        "ass5",
+        "ass6",
+        "ass7"
     ]
 }
