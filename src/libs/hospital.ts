@@ -15,7 +15,7 @@ export async function getHospitals() {
 
 export async function getHospital(id: string) {
   const response = await ky
-    .get(`hospitals/${id}`, { prefixUrl: backendUrl })
+    .get(`hospitals/${id}`, { prefixUrl: backendUrl, fetch })
     .json<{ data: Hospital }>();
 
   return response.data;

@@ -1,5 +1,7 @@
 "use client";
 
+import { getServerSession } from "next-auth";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { MouseEventHandler, useEffect, useState } from "react";
 import Image from "../../node_modules/next/image";
@@ -28,6 +30,8 @@ export default function Banner() {
     return () => clearInterval(interval);
   }, [nextBanner]);
 
+  const { data } = useSession();
+
   return (
     <div>
       <div className={styles.banner}>
@@ -39,6 +43,12 @@ export default function Banner() {
           objectFit="cover"
           onClick={nextBanner}
         />
+
+        <div className="absolute right-4 top-4">
+          Enjoy&nbsp;
+          <i>{data?.user?.name}</i>
+          &nbsp;!
+        </div>
 
         <div className={styles.bannerText + " pointer-events-none"}>
           <h1 className="pointer-events-auto w-fit m-auto">Vaccine</h1>
