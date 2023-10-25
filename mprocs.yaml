@@ -1,0 +1,6 @@
+procs:
+    backend:
+        cwd: ../VaccineApp
+        shell: pnpm run dev
+    frontend:
+        shell: pnpm run dev

@@ -24,6 +24,12 @@ export default async function MenuBar() {
         </Link>
       )}
 
+      <Link
+        href="/mybooking"
+        className="flex h-full opacity-25 hover:opacity-75 transition-all bg-emerald-500 place-items-center justify-center"
+      >
+        <h3 className="m-0 text-center font-bold">My Booking</h3>
+      </Link>
       <div className="flex-grow"></div>
 
       <Link

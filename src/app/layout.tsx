@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import MenuBar from "@/components/MenuBar";
 import Image from "next/image";
-import { SessionProvider } from "next-auth/react";
 import { getServerSession } from "next-auth";
 import NextAuthProvider from "@/providers/NextAuthProvider";
+import ReduxProvider from "@/providers/ReduxProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,13 +24,17 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NextAuthProvider session={nextAuthSession}>
-          <MenuBar />
-          {children}
-          <div className="fixed right-0 bottom-0 w-60 h-60">
-            <Image src="/cover/medical-5459630_1280.png" alt="support" fill />
-          </div>
-        </NextAuthProvider>
+        <ReduxProvider>
+          <NextAuthProvider session={nextAuthSession}>
+            <MenuBar />
+            {children}
+            <div className="fixed right-0 bottom-0 w-60 h-60">
+              <Image src="/cover/medical-5459630_1280.png" alt="support" fill />
+            </div>
+          </NextAuthProvider>
+        </ReduxProvider>
+
+        <Toaster />
       </body>
     </html>
   );

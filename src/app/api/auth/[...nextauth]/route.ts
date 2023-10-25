@@ -30,12 +30,10 @@ export const authOptions: AuthOptions = {
   },
   callbacks: {
     async jwt({ token, user }) {
-      console.log("jwt?", token, user);
       return { ...token, ...user };
     },
 
     async session({ session, token, user }) {
-      console.log("session", session, token, user);
       session.user = token as any;
       return session;
     },
