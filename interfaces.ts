@@ -3,5 +3,5 @@ export interface BookingItem {
   lastname: string;
   nationalId: string;
   hospital: string;
-  date: Date;
+  date: string;
 }

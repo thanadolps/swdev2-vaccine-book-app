@@ -39,7 +39,7 @@ export default function BookingForm(props: BookingFormProps) {
         lastname: lastname,
         nationalId: id + "",
         hospital,
-        date: date.toDate(),
+        date: date.format("DD/MM/YYYY"),
       })
     );
 

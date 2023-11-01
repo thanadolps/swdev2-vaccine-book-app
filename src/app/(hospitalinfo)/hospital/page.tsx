@@ -1,3 +1,4 @@
+import { getServerSession } from "next-auth";
 import { LinearProgress, List, ListItemButton } from "@mui/material";
 import { exhaustiveGuard } from "@/libs/utils";
 import Image from "next/image";
@@ -5,10 +6,15 @@ import { Suspense, useReducer } from "react";
 import Link from "next/link";
 import HospitalCatalog from "@/components/HospitalCatalog";
 import { getHospitals } from "@/libs/hospital";
+import { getUserProfile } from "@/libs/user";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import AddHospitalForm from "@/components/AddHospitalForm";
 
-export default function Hospital() {
+export default async function Hospital() {
   // const [ratingMap, dispatch] = useReducer(reducer, {});
-  const hospitals = getHospitals();
+  const profile = await getServerSession(authOptions).then((session) =>
+    session ? getUserProfile(session.user.token) : null
+  );
 
   return (
     <>
@@ -18,11 +24,17 @@ export default function Hospital() {
 
       <Suspense fallback={<LinearProgress />}>
         <HospitalCatalog
-          hospitals={hospitals}
+          hospitals={getHospitals()}
           ratingMap={{}}
           // onRatingChange={() => {}}
         />
       </Suspense>
+
+      {profile?.role === "admin" && (
+        <div className="max-w-4xl m-auto mt-16">
+          <AddHospitalForm />
+        </div>
+      )}
 
       {/* <List className="bg-gray-900">
         {Object.entries(ratingMap).map(([hospital, rating]) => (

@@ -40,7 +40,7 @@ export default function Page() {
               <b>Hospital:</b> {booking.hospital}
             </p>
             <p>
-              <b>Date:</b> {booking.date.toLocaleDateString()}
+              <b>Date:</b> {booking.date}
             </p>
           </>
         )}
@@ -51,7 +51,7 @@ export default function Page() {
             Cancel booking
           </Button>
         ) : (
-          <Button color="primary" size="large" href="/mybooking">
+          <Button color="primary" size="large" href="/booking">
             Go Book Now
           </Button>
         )}
