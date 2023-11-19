@@ -9,7 +9,7 @@ import VideoPlayer from "./VideoPlayer";
 const vidSrc = "/getvaccine.mp4";
 
 export default function PromoteCard() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   // Prevent right-clicking on the video
   useWindowListener("contextmenu", (e) => {
@@ -29,7 +29,11 @@ export default function PromoteCard() {
             "<u>Get Vaccinated</u>"
           </Link>
         </span>
-        <Button onClick={() => setIsPlaying((x) => !x)} variant="outlined">
+        <Button
+          id="videoBtn"
+          onClick={() => setIsPlaying((x) => !x)}
+          variant="outlined"
+        >
           {isPlaying ? "Pause" : "Play"}
         </Button>
       </div>

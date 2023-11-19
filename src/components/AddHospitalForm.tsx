@@ -1,5 +1,5 @@
 import { dbConnect } from "@/db/dbConnect";
-import HospitalModel, { IHospital } from "@/db/models/Hospital";
+import HospitalModel from "@/db/models/Hospital";
 import { TextField, Paper, Button } from "@mui/material";
 import { revalidatePath } from "next/cache";
 
